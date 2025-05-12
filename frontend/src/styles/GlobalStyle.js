@@ -22,7 +22,7 @@ export const GlobalStyle = createGlobalStyle `
         font-family: "Nunito", sans-serif;
         background-color: red;
         font-size: clamp(1rem, 1.5vw, 1.2rem);
-        overflow: auto;
+        overflow: hidden;
         color: rgba(34,34,96,.6)
     }
     

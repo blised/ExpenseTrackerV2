@@ -81,8 +81,7 @@ function IncomeItem({
                         <p>{dollar} {amount}</p>
                         <p>{calender} {dateFormat(date)}</p>
                         <p>
-                            {comment}
-                            {description}
+                            <span className='comment-icon' data-comment={description}>{comment}</span>
                         </p>
                     </div>
                     <div className='btn-con'>
@@ -150,7 +149,6 @@ const IncomeItemStyled = styled.div`
                 background: ${props => props.indicator};
             }
         }
-
         .inner-content{
             display: flex;
             justify-content: space-between;
@@ -159,12 +157,78 @@ const IncomeItemStyled = styled.div`
                 display: flex;
                 align-items: center;
                 gap: 1.5rem;
+                /*font-size: 10.2rem; day, $ and coment*/
                 p{
                     display: flex;
                     align-items: center;
-                    gap: 0.5rem;
+                    gap: .5rem;
                     color: var(--primary-color);
                     opacity: 0.8;
+
+                    .comment-icon{
+                        &::after{
+                            content: attr(data-comment);
+                            display: content;
+                        }
+                    }
+                    
+                }
+            }
+        }
+    }
+    
+    @media (max-width: 740px) {
+    
+    }
+    
+    @media (max-width: 990px){
+        .content{
+            .inner-content{
+                .text{
+                    .p{
+                        span{
+                            display: hover;     
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 1480px){
+        .content{
+            .inner-content{
+                .text{
+                    gap: 0.5rem;
+                    font-size: 0.9rem;
+                    p{
+                        display: flex;
+                        aling-items: center;
+                        gap: .1rem;
+                        .comment-icon{
+                            position: relative;
+                            cursor: help;
+                            &::after{
+                                content: attr(data-comment);
+                                position: absolute;
+                                bottom: 100%; left: 50%;
+                                transform: translateX(-50%) translateY(-8px);
+                                background: rgba(34,34,96,0.9);
+                                color: white;
+                                padding: 0.3rem 0.5rem;
+                                border-radius: 4px;
+                                white-space: nowrap;
+                                opacity: 0;
+                                pointer-events: none;
+                                transition: opacity 0.2s;
+                            }
+                            
+                            &:hover::after{
+                                opacity: 1;
+                            }
+
+                        }
+                    }
                 }
             }
         }
