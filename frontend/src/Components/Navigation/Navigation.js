@@ -133,7 +133,7 @@ const NavStyled = styled.nav`
 
     /* laptop */
     @media (max-width: 1200px) {
-        width: 300px;
+        width: 250px;
     }
 
     /* tablet: sólo iconos verticales */

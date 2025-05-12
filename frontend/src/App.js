@@ -72,7 +72,7 @@ const ResponsiveLayout = styled(MainLayout)`
 
   @media (max-width: 1200px) {
     /* laptops más estrechos */
-    grid-template-columns: 300px 1fr;
+    grid-template-columns: 250px 1fr;
   }
   @media (max-width: 992px) {
     /* tablets: apila todo */
