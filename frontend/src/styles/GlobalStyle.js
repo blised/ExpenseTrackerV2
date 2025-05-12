@@ -22,8 +22,14 @@ export const GlobalStyle = createGlobalStyle `
         font-family: "Nunito", sans-serif;
         background-color: red;
         font-size: clamp(1rem, 1.5vw, 1.2rem);
-        overflow: hidden;
+        overflow: auto;
         color: rgba(34,34,96,.6)
+    }
+    
+    @media (max-width: 576px){
+        body{
+            padding-top: 60px
+        }
     }
 
     h1, h2, h3, h4, h5, h6{
